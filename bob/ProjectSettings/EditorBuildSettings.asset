@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/foruui.unity
+    guid: 9f075073d3b870849a46d9054e8f469e
+  - enabled: 1
+    path: Assets/Rain.unity
+    guid: 8b155b68d95e8d740b097652e21ed148
   m_configObjects: {}

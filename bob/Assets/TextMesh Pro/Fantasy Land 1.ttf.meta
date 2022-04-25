@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: c79a8c80e692a0f4d9ca968484745955
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Fantasy land
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 992bf1ed7e5896247bcc24961425b543, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
