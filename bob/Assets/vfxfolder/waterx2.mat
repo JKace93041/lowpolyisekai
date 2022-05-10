@@ -119,8 +119,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - DeepWater: {r: 0, g: 0.04119547, b: 0.4150943, a: 0.49019608}
-    - FoamColor: {r: 1, g: 1, b: 1, a: 0.8941177}
+    - DeepWater: {r: 0, g: 0, b: 0, a: 0.49019608}
+    - FoamColor: {r: 0.15779635, g: 0.4245283, b: 0.17482182, a: 0.8941177}
     - FoamColor_1: {r: 1, g: 0.39373696, b: 0, a: 0}
     - RefractionScale_1: {r: 3, g: 10, b: 0, a: 0}
     - ShallowWater: {r: 0, g: 0.9111044, b: 1, a: 0.24313726}
