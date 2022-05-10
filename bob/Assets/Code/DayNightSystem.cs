@@ -44,12 +44,12 @@ public class DayNightSystem : MonoBehaviour
         {
             displayhours = (hours - 12).ToString();
         }
-        if (currentTime >= midday /2 && currentTime <= midday * 1.5)
+        if (currentTime >= midday / 2 && currentTime <= midday * 1.5f)
         {
             if (Stars.GetFloat("_Cutoff") < 1)
             {
                 float alpha = Stars.GetFloat("_Cutoff") * 100f;
-                alpha += 3* rotationspeed * Time.deltaTime;
+                alpha += 100 * rotationspeed * Time.deltaTime;
                 alpha = alpha * .01f;
                 Stars.SetFloat("_Cutoff", alpha);
             }
@@ -59,7 +59,7 @@ public class DayNightSystem : MonoBehaviour
             if (Stars.GetFloat("_Cutoff") > .2f)
             {
                 float alpha = Stars.GetFloat("_Cutoff") * 100f;
-                alpha -= 3*  rotationspeed * Time.deltaTime;
+                alpha -= 3 *  rotationspeed * Time.deltaTime;
                 alpha = alpha * .01f;
                 Stars.SetFloat("_Cutoff", alpha);
             }
