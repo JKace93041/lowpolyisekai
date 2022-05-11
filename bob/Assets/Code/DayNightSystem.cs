@@ -10,6 +10,8 @@ public class DayNightSystem : MonoBehaviour
     public float dayLengthMinutes;
     public TextMeshProUGUI timeText;
     public Material Stars;
+    //public GameObject spotlight;
+    public Light lux;
     private float rotationspeed;
     float midday;
     float translateTime;
@@ -52,6 +54,15 @@ public class DayNightSystem : MonoBehaviour
                 alpha += 100 * rotationspeed * Time.deltaTime;
                 alpha = alpha * .01f;
                 Stars.SetFloat("_Cutoff", alpha);
+                //spotlight.SetActive(false);
+               
+                lux.intensity -= lux.intensity *  Time.deltaTime * 100;
+                if (lux.intensity <= 10)
+                {
+                   
+                    lux.intensity = 10;
+
+                }
             }
         }
         else
@@ -62,6 +73,14 @@ public class DayNightSystem : MonoBehaviour
                 alpha -= 3 *  rotationspeed * Time.deltaTime;
                 alpha = alpha * .01f;
                 Stars.SetFloat("_Cutoff", alpha);
+                //spotlight.SetActive(true);
+                //lux.intensity = 1000;
+                lux.intensity += lux.intensity * Time.deltaTime * 10;
+                if (lux.intensity >= 1000)
+                {
+                    lux.intensity = 1000;
+
+                }
             }
         }
         if (currentTime >= midday )
