@@ -5,12 +5,16 @@ using TMPro;
 
 public class DayNightSystem : MonoBehaviour
 {
-    
+    AudioSource attachedAudioSource1;
+    AudioSource attachedAudioSource2;
     public float currentTime;
     public float dayLengthMinutes;
     public TextMeshProUGUI timeText;
     public Material Stars;
-    //public GameObject spotlight;
+    public GameObject Rain;
+    public GameObject happymusic;
+    public GameObject witchmusic;
+
     public Light lux;
     private float rotationspeed;
     float midday;
@@ -20,6 +24,10 @@ public class DayNightSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        attachedAudioSource1 = happymusic.GetComponent<AudioSource>();
+        attachedAudioSource2 = witchmusic.GetComponent<AudioSource>();
+
         rotationspeed = 360 / dayLengthMinutes / 60;
         midday = dayLengthMinutes * 60 / 2;
     }
@@ -27,6 +35,7 @@ public class DayNightSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         currentTime += 1 * Time.deltaTime;
         translateTime = (currentTime / (midday * 2));
         
@@ -54,10 +63,15 @@ public class DayNightSystem : MonoBehaviour
                 alpha += 100 * rotationspeed * Time.deltaTime;
                 alpha = alpha * .01f;
                 Stars.SetFloat("_Cutoff", alpha);
-                //spotlight.SetActive(false);
-               
+                Rain.SetActive(true);
+                witchmusic.SetActive(false);
+                attachedAudioSource1.Play();
+                attachedAudioSource2.Stop();
+                happymusic.SetActive(true);
+
+
                 lux.intensity -= lux.intensity *  Time.deltaTime * 100;
-                if (lux.intensity <= 10)
+                if (lux.intensity <= 0)
                 {
                    
                     lux.intensity = 10;
@@ -73,7 +87,12 @@ public class DayNightSystem : MonoBehaviour
                 alpha -= 3 *  rotationspeed * Time.deltaTime;
                 alpha = alpha * .01f;
                 Stars.SetFloat("_Cutoff", alpha);
-                //spotlight.SetActive(true);
+                Rain.SetActive(false);
+                witchmusic.SetActive(true);
+                happymusic.SetActive(true);
+                attachedAudioSource1.Stop();
+                attachedAudioSource2.Play();
+
                 //lux.intensity = 1000;
                 lux.intensity += lux.intensity * Time.deltaTime * 10;
                 if (lux.intensity >= 1000)
