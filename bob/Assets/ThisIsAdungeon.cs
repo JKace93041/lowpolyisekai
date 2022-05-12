@@ -28,7 +28,9 @@ public class ThisIsAdungeon : MonoBehaviour
            
             
                 ui.SetActive(true);
+            
             StartCoroutine("WaitForSeconds");
+            
                
            
 
@@ -49,7 +51,9 @@ public class ThisIsAdungeon : MonoBehaviour
     //}
     IEnumerator WaitForSeconds()
     {
+       
         yield return new WaitForSeconds(5);
+
         Destroy(ui);
         Destroy(gameObject);
 
